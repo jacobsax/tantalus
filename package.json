@@ -1,0 +1,24 @@
+{
+  "name": "tantalus",
+  "version": "0.2.0",
+  "description": "Alternative cross-platform client for Evernote built in Electron.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fmoliveira/tantalus.git"
+  },
+  "keywords": [
+    "evernote",
+    "client",
+    "note"
+  ],
+  "author": "Filipe Oliveira <contato@fmoliveira.com.br>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fmoliveira/tantalus/issues"
+  },
+  "homepage": "https://github.com/fmoliveira/tantalus#readme"
+}
