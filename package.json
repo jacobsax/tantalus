@@ -25,5 +25,8 @@
   "devDependencies": {
     "electron-prebuilt": "^0.36.8",
     "eslint": "^2.2.0"
+  },
+  "dependencies": {
+    "photon": "github:connors/photon"
   }
 }

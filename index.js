@@ -17,7 +17,14 @@ app.on('window-all-closed', () => {
 
 // Load the main window when Electron has been initialised
 app.on('ready', () => {
-  mainWindow = new BrowserWindow({ width: 800, height: 600 })
+  mainWindow = new BrowserWindow({
+    'width': 800,
+    'height': 600,
+    'min-width': 500,
+    'min-height': 300,
+    'frame': false
+  })
+
   mainWindow.loadURL('file://' + __dirname + '/src/index.html')
 
   // Dereference it when window is closed
