@@ -4,7 +4,8 @@
   "description": "Alternative cross-platform client for Evernote built in Electron.",
   "main": "index.js",
   "scripts": {
-    "test": "node node_modules/eslint/bin/eslint ."
+    "start": "node node_modules/.bin/electron .",
+    "test": "node node_modules/.bin/eslint ."
   },
   "repository": {
     "type": "git",
@@ -21,7 +22,8 @@
     "url": "https://github.com/fmoliveira/tantalus/issues"
   },
   "homepage": "https://github.com/fmoliveira/tantalus#readme",
-  "dependencies": {
+  "devDependencies": {
+    "electron-prebuilt": "^0.36.8",
     "eslint": "^2.2.0"
   }
 }
