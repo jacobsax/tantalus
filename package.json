@@ -8,7 +8,10 @@
     "build:css": "stylus src/styles/ --include-css",
     "build:js": "browserify src/app/app.js -o src/js/bundle.js",
     "start": "electron .",
-    "test": "standard"
+    "test": "standard",
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:css": "stylus -w src/styles/ --include-css",
+    "watch:js": "watchify src/app/app.js -o src/js/bundle.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +38,8 @@
     "electron-prebuilt": "^0.36.8",
     "npm-run-all": "^1.6.0",
     "standard": "^6.0.8",
-    "stylus": "^0.54.2"
+    "stylus": "^0.54.2",
+    "watchify": "^3.7.0"
   },
   "dependencies": {
     "angular": "^1.5.2",
