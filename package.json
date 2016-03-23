@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node node_modules/.bin/electron .",
-    "test": "node node_modules/.bin/eslint ."
+    "test": "standard"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/fmoliveira/tantalus#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.8",
-    "eslint": "^2.2.0"
+    "standard": "^6.0.8"
   },
   "dependencies": {
     "photon": "github:connors/photon"
