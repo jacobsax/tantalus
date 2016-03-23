@@ -4,6 +4,7 @@
   "description": "Alternative cross-platform client for Evernote built in Electron.",
   "main": "index.js",
   "scripts": {
+    "build": "npm-run-all build:*",
     "build:css": "stylus src/styles/ --include-css",
     "build:js": "browserify src/app/app.js -o src/js/bundle.js",
     "start": "electron .",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "browserify": "^13.0.0",
     "electron-prebuilt": "^0.36.8",
+    "npm-run-all": "^1.6.0",
     "standard": "^6.0.8",
     "stylus": "^0.54.2"
   },
