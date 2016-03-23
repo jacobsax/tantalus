@@ -7,7 +7,7 @@
 
   <link rel="stylesheet" href="styles/tantalus.css">
 </head>
-<body style="-webkit-app-region: drag">
+<body style="-webkit-app-region: drag" ng-app="Tantalus" ng-controller="MainCtrl as vm">
 
   <div class="window">
     <header class="toolbar toolbar-header">
@@ -44,28 +44,20 @@
         <div class="pane-sm sidebar">
           <nav class="nav-group">
             <h5 class="nav-group-title">Notebooks</h5>
-            <a href="" class="nav-group-item active">
-              General
-            </a>
-            <a href="" class="nav-group-item">
-              Miscelaneous
-            </a>
-            <a href="" class="nav-group-item">
-              Others
-            </a>
+            <a ng-repeat="i in vm.notebooks"
+              ng-bind="i.name"
+              href="#/notebooks/{{ i.id }}"
+              class="nav-group-item"
+              ng-class="{ 'active': i.id === 1 }"></a>
           </nav>
 
           <nav class="nav-group">
             <h5 class="nav-group-title">Tags</h5>
-            <a href="" class="nav-group-item">
-              One
-            </a>
-            <a href="" class="nav-group-item">
-              Two
-            </a>
-            <a href="" class="nav-group-item">
-              Three
-            </a>
+            <a ng-repeat="i in vm.tags"
+              ng-bind="i.name"
+              href="#/tags/{{ i.id }}"
+              class="nav-group-item"
+              ng-class="{ 'active': i.id === 1 }"></a>
           </nav>
         </div>
         <div class="pane">
@@ -73,22 +65,10 @@
             <li class="list-group-header">
               <input type="text" class="form-control" placeholder="Search for something">
             </li>
-            <li class="list-group-item">
-              <div>
-                <strong>Lorem ipsum</strong>
-                <p>dolor sit amet</p>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <strong>Lorem ipsum</strong>
-                <p>dolor sit amet</p>
-              </div>
-            </li>
-            <li class="list-group-item">
-              <div>
-                <strong>Lorem ipsum</strong>
-                <p>dolor sit amet</p>
+            <li ng-repeat="i in vm.notes" class="list-group-item">
+              <div ng-click="vm.goto('/notes/' + i.id)">
+                <strong ng-bind="i.title"></strong>
+                <p ng-bind="i.body"></p>
               </div>
             </li>
           </ul>
@@ -102,5 +82,6 @@
     </footer>
   </div>
 
+  <script src="js/bundle.js"></script>
 </body>
 </html>
