@@ -4,6 +4,7 @@
   "description": "Alternative cross-platform client for Evernote built in Electron.",
   "main": "index.js",
   "scripts": {
+    "build:css": "stylus src/styles/ --include-css",
     "start": "electron .",
     "test": "standard"
   },
@@ -29,7 +30,8 @@
   "homepage": "https://github.com/fmoliveira/tantalus#readme",
   "devDependencies": {
     "electron-prebuilt": "^0.36.8",
-    "standard": "^6.0.8"
+    "standard": "^6.0.8",
+    "stylus": "^0.54.2"
   },
   "dependencies": {
     "photon": "github:connors/photon"
