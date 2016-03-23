@@ -1,6 +1,7 @@
 'use strict'
 
 const electron = require('electron')
+const path = require('path')
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
@@ -10,7 +11,7 @@ var mainWindow = null
 // Quit when all windows are closed
 app.on('window-all-closed', () => {
   // OS X apps use to hide instead of closing
-  if (process.platform != 'darwin') {
+  if (process.platform !== 'darwin') {
     app.quit()
   }
 })
@@ -25,8 +26,10 @@ app.on('ready', () => {
     'frame': false
   })
 
-  mainWindow.loadURL('file://' + __dirname + '/src/index.html')
+  mainWindow.loadURL(path.join('file://', __dirname, '/src/index.html'))
 
   // Dereference it when window is closed
-  mainWindow.on('closed', () => mainWindow = null)
+  mainWindow.on('closed', () => {
+    mainWindow = null
+  })
 })
