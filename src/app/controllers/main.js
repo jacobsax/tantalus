@@ -8,7 +8,6 @@ angular.module('Tantalus')
   this.tags = tagsData
 
   this.goto = function (path) {
-    console.log()
     $location.path(path)
   }
 })
