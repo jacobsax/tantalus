@@ -15,7 +15,11 @@
     "evernote",
     "alternative",
     "client",
-    "note"
+    "notes",
+    "productivity",
+    "tasks",
+    "lists",
+    "to do"
   ],
   "author": "Filipe Oliveira <contato@fmoliveira.com.br>",
   "license": "MIT",
