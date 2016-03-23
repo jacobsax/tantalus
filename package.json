@@ -4,7 +4,7 @@
   "description": "Alternative cross-platform client for Evernote built in Electron.",
   "main": "index.js",
   "scripts": {
-    "start": "node node_modules/.bin/electron .",
+    "start": "electron .",
     "test": "standard"
   },
   "repository": {
