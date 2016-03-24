@@ -2,10 +2,13 @@
 
 'use strict'
 
+// Load modules
+var uuid = require('node-uuid')
+
 /**
  * Service to manage user's notebooks.
  */
-function NotebooksService () {
+function NotebooksService (localStorageService) {
   var notebooks = []
 
   /**
@@ -17,13 +20,25 @@ function NotebooksService () {
   }
 
   /**
+   * Create initial notebooks for a new user.
+   */
+  function initNotebooks () {
+    notebooks = []
+    notebooks.push({
+      id: uuid.v1(),
+      name: 'General'
+    })
+  }
+
+  /**
    * Load notebooks from the underlying storage.
    */
   function loadNotebooks () {
-    notebooks.push({
-      id: 1,
-      name: 'General'
-    })
+    notebooks = localStorageService.get('Notebooks')
+
+    if (!notebooks) {
+      initNotebooks()
+    }
   }
 
   // Load notebooks immediatelly
