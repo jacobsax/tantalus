@@ -33,11 +33,13 @@ function NotesService (localStorageService) {
    * @param  {String} noteBody  New note body.
    */
   function newNote(noteTitle, noteBody) {
-    notes.push({
+    var newNote = {
       id: uuid.v4(),
       title: noteTitle,
       body: noteBody
-    })
+    }
+    notes.push(newNote)
+    return newNote
   }
 
   /**
@@ -56,7 +58,8 @@ function NotesService (localStorageService) {
 
   // Exposed service
   return {
-    getNotes: getNotes
+    getNotes: getNotes,
+    newNote: newNote
   }
 }
 

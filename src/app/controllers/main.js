@@ -12,6 +12,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   self.note = undefined
   self.goto = goto
   self.selectNote = selectNote
+  self.createNewNote = createNewNote
 
   /**
    * Load all required resources.
@@ -36,6 +37,14 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
    */
   function selectNote (note) {
     self.note = note
+  }
+
+  /**
+   * Create a new note and select it.
+   */
+  function createNewNote () {
+    var note = NotesService.newNote('New note', 'The books is on the table.')
+    selectNote(note)
   }
 
   // Load everything immediately
