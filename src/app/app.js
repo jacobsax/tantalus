@@ -10,10 +10,10 @@ angular.module('Tantalus', [])
 
 // Setup services
 .factory('NotebooksService', require('./services/notebooks'))
+.factory('NotesService', require('./services/notes'))
 
 // Load controllers
 require('./controllers/main')
 
 // Load services
-require('./services/notes')
 require('./services/tags')

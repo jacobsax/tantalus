@@ -29,7 +29,7 @@ function NotebooksService () {
   // Load notebooks immediatelly
   loadNotebooks()
 
-  // Exposed functions
+  // Exposed service
   return {
     getNotebooks: getNotebooks
   }

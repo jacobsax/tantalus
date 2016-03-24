@@ -4,9 +4,9 @@
 
 angular.module('Tantalus')
 
-.controller('MainCtrl', function ($location, NotebooksService, notesData, tagsData) {
+.controller('MainCtrl', function ($location, NotebooksService, NotesService, tagsData) {
   this.notebooks = NotebooksService.getNotebooks()
-  this.notes = notesData
+  this.notes = NotesService.getNotes()
   this.tags = tagsData
 
   this.goto = function (path) {

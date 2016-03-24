@@ -2,28 +2,38 @@
 
 'use strict'
 
-angular.module('Tantalus')
+/**
+ * Service to manager user's notes.
+ */
+function NotesService () {
+  var notes = []
 
-.factory('notesData', function () {
-  let list = []
+  /**
+   * Get a list of all notes.
+   * @return {Array} Array of note objects.
+   */
+  function getNotes () {
+    return notes
+  }
 
-  list.push({
-    id: 1,
-    title: 'Lorem ipsum',
-    body: 'dolor sit amet'
-  })
+  /**
+   * Load notes from the underlying storage.
+   */
+  function loadNotes () {
+    notes.push({
+      id: 1,
+      title: 'Lorem ipsum',
+      body: 'dolor sit amet'
+    })
+  }
 
-  list.push({
-    id: 2,
-    title: 'Lorem ipsum',
-    body: 'dolor sit amet'
-  })
+  // Load notes immediately
+  loadNotes()
 
-  list.push({
-    id: 3,
-    title: 'Lorem ipsum',
-    body: 'dolor sit amet'
-  })
+  // Exposed service
+  return {
+    getNotes: getNotes
+  }
+}
 
-  return list
-})
+module.exports = NotesService
