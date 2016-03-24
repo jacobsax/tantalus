@@ -4,9 +4,12 @@
 
 // Load modules
 require('angular')
+require('angular-local-storage')
 
 // Initialise app
-angular.module('Tantalus', [])
+angular.module('Tantalus', [
+  'LocalStorageModule'
+])
 
 // Setup services
 .factory('NotebooksService', require('./services/notebooks'))
