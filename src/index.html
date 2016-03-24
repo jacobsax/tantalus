@@ -66,14 +66,19 @@
               <input type="text" class="form-control" placeholder="Search for something">
             </li>
             <li ng-repeat="i in vm.notes" class="list-group-item">
-              <div ng-click="vm.goto('/notes/' + i.id)">
+              <div ng-click="vm.selectNote(i)">
                 <strong ng-bind="i.title"></strong>
                 <p ng-bind="i.body"></p>
               </div>
             </li>
           </ul>
         </div>
-        <div class="pane"></div>
+        <div class="pane">
+          <div class="padded" ng-if="vm.note">
+            <h4 ng-bind="vm.note.title"></h4>
+            <div ng-bind="vm.note.body"></div>
+          </div>
+        </div>
       </div>
 
     </div>

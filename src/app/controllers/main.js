@@ -5,10 +5,13 @@
 function MainController ($location, NotebooksService, NotesService, TagsService) {
   var self = this
 
-  // Declare all required models
+  // Exposed controller
   self.notebooks = []
   self.notes = []
   self.tags = []
+  self.note = undefined
+  self.goto = goto
+  self.selectNote = selectNote
 
   /**
    * Load all required resources.
@@ -27,11 +30,16 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
     $location.path(path)
   }
 
+  /**
+   * Select a note to be displayed.
+   * @param  {Object} note Note object.
+   */
+  function selectNote (note) {
+    self.note = note
+  }
+
   // Load everything immediately
   loadEverything()
-
-  // Exposed controller
-  self.goto = goto
 }
 
 module.exports = MainController
