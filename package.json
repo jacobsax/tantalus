@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "angular": "^1.5.2",
+    "evernote": "^1.25.82",
     "photon": "github:connors/photon"
   }
 }
