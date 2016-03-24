@@ -2353,6 +2353,8 @@ td:last-child {
   padding: 3px 10px;
 }
 
-.window-draggable {
+.toolbar-header,
+.toolbar-footer {
+  -webkit-user-select: none;
   -webkit-app-region: drag;
 }
