@@ -29,6 +29,10 @@ function TagsService (localStorageService) {
     newTag('Holiday')
   }
 
+  /**
+   * Create a new tag.
+   * @param  {String} tagName New tag name.
+   */
   function newTag (tagName) {
     tags.push({
       id: uuid.v4(),
