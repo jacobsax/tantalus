@@ -74,10 +74,14 @@
           </ul>
         </div>
         <div class="pane">
-          <div class="padded" ng-if="vm.note">
-            <h4 ng-bind="vm.note.title"></h4>
-            <div ng-bind="vm.note.body"></div>
-          </div>
+          <form class="padded">
+            <div class="form-group">
+              <input id="title" class="form-control" placeholder="Title" type="text" ng-model="vm.note.title">
+            </div>
+            <div class="form-group">
+              <textarea id="body" class="form-control" placeholder="Text" cols="30" rows="20" ng-model="vm.note.body"></textarea>
+            </div>
+          </form>
         </div>
       </div>
 
