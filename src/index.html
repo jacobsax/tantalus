@@ -44,7 +44,7 @@
         <div class="pane-sm sidebar">
           <nav class="nav-group">
             <h5 class="nav-group-title">Notebooks</h5>
-            <a ng-repeat="i in vm.notebooks"
+            <a ng-repeat="i in vm.notebooks | orderBy:'name'"
               ng-bind="i.name"
               href="#/notebooks/{{ i.id }}"
               class="nav-group-item"
@@ -53,7 +53,7 @@
 
           <nav class="nav-group">
             <h5 class="nav-group-title">Tags</h5>
-            <a ng-repeat="i in vm.tags"
+            <a ng-repeat="i in vm.tags | orderBy:'name'"
               ng-bind="i.name"
               href="#/tags/{{ i.id }}"
               class="nav-group-item"
