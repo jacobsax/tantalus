@@ -45,6 +45,7 @@
     "angular": "^1.5.2",
     "angular-local-storage": "^0.2.7",
     "evernote": "^1.25.82",
+    "node-uuid": "^1.4.7",
     "photon": "github:connors/photon"
   }
 }
