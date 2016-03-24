@@ -11,6 +11,13 @@ angular.module('Tantalus', [
   'LocalStorageModule'
 ])
 
+// App settings
+.config(function (localStorageServiceProvider) {
+  localStorageServiceProvider
+    .setPrefix('Tantalus')
+    .setStorageType('localStorage')
+})
+
 // Setup services
 .factory('NotebooksService', require('./services/notebooks'))
 .factory('NotesService', require('./services/notes'))
