@@ -2,10 +2,13 @@
 
 'use strict'
 
+// Load modules
+var uuid = require('node-uuid')
+
 /**
  * Service to manage user's notebooks.
  */
-function TagsService () {
+function TagsService (localStorageService) {
   var tags = []
 
   /**
@@ -17,13 +20,31 @@ function TagsService () {
   }
 
   /**
+   * Create initial tags for a new user.
+   */
+  function initTags () {
+    tags = []
+    newTag('Read later')
+    newTag('Delicious recipes')
+    newTag('Holiday')
+  }
+
+  function newTag (tagName) {
+    tags.push({
+      id: uuid.v4(),
+      name: tagName
+    })
+  }
+
+  /**
    * Load tags from the underlying storage.
    */
   function loadTags () {
-    tags.push({
-      id: 1,
-      name: 'Something'
-    })
+    tags = localStorageService.get('Tags')
+
+    if (!tags) {
+      initTags()
+    }
   }
 
   // Load tags immediatelly
