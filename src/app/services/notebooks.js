@@ -25,7 +25,7 @@ function NotebooksService (localStorageService) {
   function initNotebooks () {
     notebooks = []
     notebooks.push({
-      id: uuid.v1(),
+      id: uuid.v4(),
       name: 'General'
     })
   }
