@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="pane">
-          <form class="padded">
+          <form class="padded" ng-if="vm.note">
             <div class="form-group">
               <input id="title" class="form-control" placeholder="Title" type="text" ng-model="vm.note.title">
             </div>
