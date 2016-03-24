@@ -1,7 +1,9 @@
+/* global angular */
+
 'use strict'
 
 // Load modules
-var angular = require('angular')
+require('angular')
 
 // Initialise app
 angular.module('Tantalus', [])
