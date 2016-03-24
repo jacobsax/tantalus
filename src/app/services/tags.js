@@ -2,25 +2,37 @@
 
 'use strict'
 
-angular.module('Tantalus')
+/**
+ * Service to manage user's notebooks.
+ */
+function TagsService () {
+  var tags = []
 
-.factory('tagsData', function () {
-  let list = []
+  /**
+   * Get a list of all tags.
+   * @return {Array} Array of notebook objects.
+   */
+  function getTags () {
+    return tags
+  }
 
-  list.push({
-    id: 1,
-    name: 'One'
-  })
+  /**
+   * Load tags from the underlying storage.
+   */
+  function loadTags () {
+    tags.push({
+      id: 1,
+      name: 'Something'
+    })
+  }
 
-  list.push({
-    id: 2,
-    name: 'Two'
-  })
+  // Load tags immediatelly
+  loadTags()
 
-  list.push({
-    id: 3,
-    name: 'Three'
-  })
+  // Exposed service
+  return {
+    getTags: getTags
+  }
+}
 
-  return list
-})
+module.exports = TagsService
