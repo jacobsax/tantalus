@@ -2,25 +2,37 @@
 
 'use strict'
 
-angular.module('Tantalus')
+/**
+ * Service to manage user's notebooks.
+ */
+function NotebooksService () {
+  var list = []
 
-.factory('notebooksData', function () {
-  let list = []
+  /**
+   * Get a list of all notebooks.
+   * @return {Array} Array of notebook objects.
+   */
+  function getNotebooks () {
+    return list
+  }
 
-  list.push({
-    id: 1,
-    name: 'General'
-  })
+  /**
+   * Load notebooks from the underlying storage.
+   */
+  function loadNotebooks () {
+    list.push({
+      id: 1,
+      name: 'General'
+    })
+  }
 
-  list.push({
-    id: 2,
-    name: 'Miscelaneous'
-  })
+  // Load notebooks immediatelly
+  loadNotebooks()
 
-  list.push({
-    id: 3,
-    name: 'Others'
-  })
+  // Exposed functions
+  return {
+    getNotebooks: getNotebooks
+  }
+}
 
-  return list
-})
+module.exports = NotebooksService
