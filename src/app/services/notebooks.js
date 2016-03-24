@@ -24,9 +24,17 @@ function NotebooksService (localStorageService) {
    */
   function initNotebooks () {
     notebooks = []
+    newNotebook('General')
+  }
+
+  /**
+   * Create a new notebook.
+   * @param  {String} notebookName New notebook name.
+   */
+  function newNotebook (notebookName) {
     notebooks.push({
       id: uuid.v4(),
-      name: 'General'
+      name: notebookName
     })
   }
 
