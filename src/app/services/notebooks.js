@@ -6,21 +6,21 @@
  * Service to manage user's notebooks.
  */
 function NotebooksService () {
-  var list = []
+  var notebooks = []
 
   /**
    * Get a list of all notebooks.
    * @return {Array} Array of notebook objects.
    */
   function getNotebooks () {
-    return list
+    return notebooks
   }
 
   /**
    * Load notebooks from the underlying storage.
    */
   function loadNotebooks () {
-    list.push({
+    notebooks.push({
       id: 1,
       name: 'General'
     })
