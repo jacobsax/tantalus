@@ -2,14 +2,36 @@
 
 'use strict'
 
-angular.module('Tantalus')
+function MainController ($location, NotebooksService, NotesService, TagsService) {
+  var self = this
 
-.controller('MainCtrl', function ($location, NotebooksService, NotesService, TagsService) {
-  this.notebooks = NotebooksService.getNotebooks()
-  this.notes = NotesService.getNotes()
-  this.tags = TagsService.getTags()
+  // Declare all required models
+  self.notebooks = []
+  self.notes = []
+  self.tags = []
 
-  this.goto = function (path) {
+  /**
+   * Load all required resources.
+   */
+  function loadEverything () {
+    self.notebooks = NotebooksService.getNotebooks()
+    self.notes = NotesService.getNotes()
+    self.tags = TagsService.getTags()
+  }
+
+  /**
+   * Go to specific path.
+   * @param  {String} path Path to go.
+   */
+  function goto (path) {
     $location.path(path)
   }
-})
+
+  // Load everything immediately
+  loadEverything()
+
+  // Exposed controller
+  self.goto = goto
+}
+
+module.exports = MainController

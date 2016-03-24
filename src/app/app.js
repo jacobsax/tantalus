@@ -23,5 +23,5 @@ angular.module('Tantalus', [
 .factory('NotesService', require('./services/notes'))
 .factory('TagsService', require('./services/tags'))
 
-// Load controllers
-require('./controllers/main')
+// Setup controllers
+.controller('MainController', require('./controllers/main'))
