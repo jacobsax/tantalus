@@ -30,7 +30,7 @@
         </button>
 
         <div class="btn-group pull-right">
-          <input type="text" class="form-control" placeholder="Search all notes">
+          <input type="text" class="form-control" ng-model="search" placeholder="Search all notes">
         </div>
       </div>
     </header>
@@ -59,7 +59,7 @@
         </div>
         <div class="pane-one-fourth">
           <ul class="list-group">
-            <li ng-repeat="i in vm.notes | orderBy:'-createdTime'" class="list-group-item" ng-class="{ 'active': i === vm.note }">
+            <li ng-repeat="i in vm.notes | filter:search | orderBy:'-createdTime'" class="list-group-item" ng-class="{ 'active': i === vm.note }">
               <div ng-click="vm.selectNote(i)">
                 <p>
                   <strong ng-bind="i.title | empty:'(Untitled note)'"></strong>
