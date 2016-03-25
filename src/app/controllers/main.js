@@ -46,6 +46,9 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
     selectNote(note)
   }
 
+  /**
+   * Delete the currently selected note.
+   */
   function deleteSelectedNote () {
     NotesService.deleteNote(self.note)
     self.note = undefined

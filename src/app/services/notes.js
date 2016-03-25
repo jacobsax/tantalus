@@ -41,6 +41,10 @@ function NotesService (localStorageService) {
     return newNote
   }
 
+  /**
+   * Delete the currently selected note.
+   * @param  {Object} note Note to be deleted.
+   */
   function deleteNote (note) {
     var idx = notes.indexOf(note)
     if (idx !== -1) {
