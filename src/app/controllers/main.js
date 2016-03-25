@@ -8,6 +8,9 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   self.notes = []
   self.tags = []
   self.note = undefined
+  self.syncing = undefined
+
+  // Exposed functions
   self.goto = goto
   self.selectNote = selectNote
   self.createNewNote = createNewNote
@@ -62,6 +65,24 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   function setChanged (note) {
     note.updatedTime = Date.now()
     note.dirty = true
+    syncData()
+  }
+
+  /**
+   * Synchronise data with the server.
+   */
+  function syncData () {
+    // for now it's just a timed fake event to show off the animation
+
+    // stop latest timeout
+    if (self.syncing) {
+      self.syncing()
+    }
+
+    // fire new timeout
+    self.syncing = setTimeout(function () {
+      self.syncing = undefined
+    }, 2000)
   }
 
   // Load everything immediately
