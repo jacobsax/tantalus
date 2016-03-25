@@ -1,5 +1,3 @@
-/* global angular */
-
 'use strict'
 
 // Load modules
@@ -32,7 +30,7 @@ function NotesService (localStorageService) {
    * @param  {String} noteTitle New note title.
    * @param  {String} noteBody  New note body.
    */
-  function newNote(noteTitle, noteBody) {
+  function newNote (noteTitle, noteBody) {
     var newNote = {
       id: uuid.v4(),
       createdTime: Date.now(),

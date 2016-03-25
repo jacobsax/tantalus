@@ -1,5 +1,3 @@
-/* global angular */
-
 'use strict'
 
 function MainController ($location, NotebooksService, NotesService, TagsService) {
