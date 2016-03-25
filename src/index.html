@@ -67,8 +67,8 @@
             </li>
             <li ng-repeat="i in vm.notes | orderBy:'-createdTime'" class="list-group-item" ng-class="{ 'active': i === vm.note }">
               <div ng-click="vm.selectNote(i)">
-                <strong ng-bind="i.title"></strong>
-                <p ng-bind="i.body"></p>
+                <strong ng-bind="i.title | empty:'(Untitled note)'"></strong>
+                <p ng-bind="i.body | empty:'(Empty note)'"></p>
               </div>
             </li>
           </ul>

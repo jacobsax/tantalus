@@ -41,7 +41,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
    * Create a new note and select it.
    */
   function createNewNote () {
-    var note = NotesService.newNote('New note', 'The books is on the table.')
+    var note = NotesService.newNote()
     selectNote(note)
   }
 

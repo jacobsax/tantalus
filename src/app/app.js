@@ -25,3 +25,6 @@ angular.module('Tantalus', [
 
 // Setup controllers
 .controller('MainController', require('./controllers/main'))
+
+// Setup filters
+.filter('empty', require('./filters/empty'))
