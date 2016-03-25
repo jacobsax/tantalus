@@ -34,6 +34,7 @@ function NotesService (localStorageService) {
     var newNote = {
       id: uuid.v4(),
       createdTime: Date.now(),
+      updatedTime: undefined,
       title: noteTitle,
       body: noteBody
     }

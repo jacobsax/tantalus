@@ -12,6 +12,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   self.selectNote = selectNote
   self.createNewNote = createNewNote
   self.deleteSelectedNote = deleteSelectedNote
+  self.setChanged = setChanged
 
   /**
    * Load all required resources.
@@ -52,6 +53,14 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   function deleteSelectedNote () {
     NotesService.deleteNote(self.note)
     self.note = undefined
+  }
+
+  /**
+   * Mark note as changed and touch its update time.
+   * @param {Object} note Note that have been changed.
+   */
+  function setChanged (note) {
+    note.updatedTime = Date.now()
   }
 
   // Load everything immediately
