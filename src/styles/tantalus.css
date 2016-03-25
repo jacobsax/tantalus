@@ -2358,3 +2358,9 @@ td:last-child {
   -webkit-user-select: none;
   -webkit-app-region: drag;
 }
+.btn-label {
+  margin-left: 5px;
+}
+.btn-group .form-control {
+  margin-top: -10px;
+}

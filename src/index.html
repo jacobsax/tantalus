@@ -14,26 +14,23 @@
       <h1 class="title">Tantalus</h1>
 
       <div class="toolbar-actions">
-        <div class="btn-group">
-          <button class="btn btn-default active">
-            <span class="icon icon-home"></span>
-          </button>
-          <button class="btn btn-default">
-            <span class="icon icon-folder"></span>
-          </button>
-          <button class="btn btn-default">
-            <span class="icon icon-cloud"></span>
-          </button>
-        </div>
+        <button class="btn btn-default btn-dropdown">
+          <span class="icon icon-user"></span>
+          <span class="btn-label">User Name</span>
+        </button>
 
-        <div class="pull-right">
-          <button class="btn btn-default" ng-click="vm.createNewNote()">
-            <span class="icon icon-plus"></span>
-          </button>
+        <button class="btn btn-default">
+          <span class="icon icon-arrows-ccw"></span>
+          <span class="btn-label">Sync</span>
+        </button>
 
-          <button class="btn btn-default btn-dropdown">
-            <span class="icon icon-user"></span>
-          </button>
+        <button class="btn btn-default" ng-click="vm.createNewNote()">
+          <span class="icon icon-plus"></span>
+          <span class="btn-label">New note</span>
+        </button>
+
+        <div class="btn-group pull-right">
+          <input type="text" class="form-control" placeholder="Search all notes">
         </div>
       </div>
     </header>
@@ -62,9 +59,6 @@
         </div>
         <div class="pane-one-fourth">
           <ul class="list-group">
-            <li class="list-group-header">
-              <input type="text" class="form-control" placeholder="Search for something">
-            </li>
             <li ng-repeat="i in vm.notes | orderBy:'-createdTime'" class="list-group-item" ng-class="{ 'active': i === vm.note }">
               <div ng-click="vm.selectNote(i)">
                 <strong ng-bind="i.title | empty:'(Untitled note)'"></strong>
