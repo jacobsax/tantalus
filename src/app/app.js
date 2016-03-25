@@ -28,3 +28,4 @@ angular.module('Tantalus', [
 
 // Setup filters
 .filter('empty', require('./filters/empty'))
+.filter('datetime', require('./filters/datetime'))
