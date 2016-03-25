@@ -2353,6 +2353,9 @@ td:last-child {
   padding: 3px 10px;
 }
 
+.window {
+  border: 1px solid #aaa;
+}
 .toolbar-header,
 .toolbar-footer {
   -webkit-user-select: none;
