@@ -41,6 +41,13 @@ function NotesService (localStorageService) {
     return newNote
   }
 
+  function deleteNote (note) {
+    var idx = notes.indexOf(note)
+    if (idx !== -1) {
+      notes.splice(idx, 1)
+    }
+  }
+
   /**
    * Load notes from the underlying storage.
    */
@@ -58,7 +65,8 @@ function NotesService (localStorageService) {
   // Exposed service
   return {
     getNotes: getNotes,
-    newNote: newNote
+    newNote: newNote,
+    deleteNote: deleteNote
   }
 }
 

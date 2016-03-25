@@ -11,6 +11,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   self.goto = goto
   self.selectNote = selectNote
   self.createNewNote = createNewNote
+  self.deleteSelectedNote = deleteSelectedNote
 
   /**
    * Load all required resources.
@@ -43,6 +44,11 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   function createNewNote () {
     var note = NotesService.newNote()
     selectNote(note)
+  }
+
+  function deleteSelectedNote () {
+    NotesService.deleteNote(self.note)
+    self.note = undefined
   }
 
   // Load everything immediately
