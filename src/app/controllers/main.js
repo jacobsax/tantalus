@@ -61,6 +61,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
    */
   function setChanged (note) {
     note.updatedTime = Date.now()
+    note.dirty = true
   }
 
   // Load everything immediately

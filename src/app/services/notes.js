@@ -36,7 +36,8 @@ function NotesService (localStorageService) {
       createdTime: Date.now(),
       updatedTime: undefined,
       title: noteTitle,
-      body: noteBody
+      body: noteBody,
+      dirty: true
     }
     notes.push(newNote)
     return newNote
