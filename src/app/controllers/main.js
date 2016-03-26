@@ -77,7 +77,7 @@ function MainController ($location, $scope, NotebooksService, NotesService, Tags
 
     // stop latest timeout
     if (self.syncing) {
-      self.syncing()
+      clearTimeout(self.syncing)
     }
 
     // fire new timeout
