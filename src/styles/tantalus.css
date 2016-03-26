@@ -2408,6 +2408,7 @@ td:last-child {
   }
 }
 .btn-dropdown {
+  position: relative;
   cursor: pointer;
 }
 .btn-dropdown:hover .dropdown-content {
@@ -2416,6 +2417,7 @@ td:last-child {
 .btn-dropdown .dropdown-content {
   display: none;
   position: absolute;
+  z-index: 999;
   top: 22px;
   left: 0;
   width: 100%;
