@@ -1,64 +1,25 @@
+// Photon kit stylesheet
 @import "../../node_modules/photon/dist/css/photon.css"
 
+// Custom styles
+@import animations
+@import dropdown
+
+// Add a fake border to the frameless window
+// Still need to reconsider what to do with the title buttons
 .window
   border 1px solid #aaa
 
+// Make header and footer draggable and unselectable
 .toolbar-header, .toolbar-footer
-  -webkit-user-select none
   -webkit-app-region drag
+  -webkit-user-select none
 
+// Add spacement between icons and button labels
 .btn-label
   margin-left 5px
 
+// Pull text inputs to top when they're placed in the toolbar
 .btn-group
   .form-control
     margin-top -10px
-
-@-webkit-keyframes icon-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-@keyframes icon-spin {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(359deg);
-    transform: rotate(359deg);
-  }
-}
-
-.icon-spin
-  -webkit-animation icon-spin 2s infinite linear
-  animation icon-spin 2s infinite linear
-
-.btn-dropdown
-  cursor pointer
-
-  &:hover
-    .dropdown-content
-      display inherit
-
-  .dropdown-content
-    display none
-    position absolute
-    top 22px
-    left 0
-    width 100%
-    background-color #fff
-    border 1px solid #aaa
-
-    .list-group-item
-      padding 5px 0
-      cursor pointer
-
-      &:hover
-        background-color #3e9bf4
-        color #fff

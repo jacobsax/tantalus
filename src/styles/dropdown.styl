@@ -1,0 +1,36 @@
+.btn-dropdown
+  cursor pointer
+
+  // Display dropdown content on hover
+  &:hover
+    .dropdown-content
+      display inherit
+
+  // Dropdown content style
+  .dropdown-content
+    display none
+
+    // Positioning
+    position absolute
+    top 22px
+    left 0
+    width 100%
+
+    // Colouring
+    background-color #fff
+    border 1px solid #aaa
+
+    // Dropdown nmenu items
+    .list-group-item
+      padding 5px 0
+      cursor pointer
+
+      // Hovering above menu items
+      &:hover
+        background-color #3e9bf4
+        color #fff
+
+      // Active menu item style
+      &.active
+        background-color #116cd6
+        color #fff
