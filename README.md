@@ -4,7 +4,7 @@
 
 Alternative cross-platform client for Evernote built in Electron.
 
-![Tantalus](assets/screenshot.png)
+![Tantalus](assets/screenshot.gif)
 
 # Roadmap
 
