@@ -15,6 +15,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
   self.selectNote = selectNote
   self.createNewNote = createNewNote
   self.deleteSelectedNote = deleteSelectedNote
+  self.startSync = syncData
   self.setChanged = setChanged
 
   /**
