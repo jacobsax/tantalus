@@ -1,5 +1,6 @@
 # Bundles
 src/js/bundle.js
+src/styles/tantalus.css
 
 # Created by https://www.gitignore.io/api/node
 
