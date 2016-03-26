@@ -23,6 +23,8 @@ function NotebooksService (localStorageService) {
   function initNotebooks () {
     notebooks = []
     newNotebook('General')
+    newNotebook('Study')
+    newNotebook('Work')
   }
 
   /**

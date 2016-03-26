@@ -87,6 +87,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
 
   // Load everything immediately
   loadEverything()
+  self.note = self.notes[0]
 }
 
 module.exports = MainController

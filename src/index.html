@@ -76,6 +76,9 @@
               <button class="btn btn-default btn-dropdown">
                 <span class="icon icon-book-open"></span>
                 <span class="btn-label">General</span>
+                <ul class="dropdown-content list-group">
+                  <li class="list-group-item" ng-repeat="i in vm.notebooks" ng-bind="i.name"></li>
+                </ul>
               </button>
 
               <button class="btn btn-default">
