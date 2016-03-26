@@ -9,6 +9,10 @@ var uuid = require('node-uuid')
 function NotesService (localStorageService) {
   var notes = []
 
+  // Welcome note constants
+  var welcomeTitle = 'Welcome to Tantalus!'
+  var welcomeBody = 'Tantalus is an alternative cross-platform client for Evernote.\n\nIt still stores everything in local storage, as we\'re in process of creating a great UI to integrate with the Evernote platform later.\n\nThanks for trying out Tantalus!'
+
   /**
    * Get a list of all notes.
    * @return {Array} Array of note objects.
@@ -22,7 +26,7 @@ function NotesService (localStorageService) {
    */
   function initNotes () {
     notes = []
-    newNote('Welcome to Tantalus!', 'Tantalus is an alternative cross-platform client for Evernote.\n\nIt still stores everything in local storage, as we\'re in process of creating a great UI to integrate with the Evernote platform later.\n\nThanks for trying out Tantalus!')
+    newNote(welcomeTitle, welcomeBody)
   }
 
   /**
