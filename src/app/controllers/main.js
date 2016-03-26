@@ -1,6 +1,6 @@
 'use strict'
 
-function MainController ($location, NotebooksService, NotesService, TagsService) {
+function MainController ($location, $scope, NotebooksService, NotesService, TagsService) {
   var self = this
 
   // Exposed controller
@@ -83,6 +83,7 @@ function MainController ($location, NotebooksService, NotesService, TagsService)
     // fire new timeout
     self.syncing = setTimeout(function () {
       self.syncing = undefined
+      $scope.$apply()
     }, 2000)
   }
 
