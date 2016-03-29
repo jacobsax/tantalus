@@ -6,12 +6,12 @@
   "scripts": {
     "build": "npm-run-all build:*",
     "build:css": "stylus src/styles/ --include-css",
-    "build:js": "browserify src/app/app.js -o src/js/bundle.js",
+    "build:js": "browserify src/app/app.js -o src/js/bundle.js -v",
     "start": "electron .",
     "test": "standard",
     "watch": "npm-run-all --parallel watch:*",
     "watch:css": "stylus -w src/styles/ --include-css",
-    "watch:js": "watchify src/app/app.js -o src/js/bundle.js"
+    "watch:js": "watchify src/app/app.js -o src/js/bundle.js -v"
   },
   "repository": {
     "type": "git",
