@@ -46,9 +46,9 @@
             <h5 class="nav-group-title">Notebooks</h5>
             <a ng-repeat="i in vm.notebooks | orderBy:'name'"
               ng-bind="i.name"
-              href="#/notebooks/{{ i.id }}"
+              ng-click="vm.selectNotebook(i)"
               class="nav-group-item"
-              ng-class="{ 'active': i.id === 1 }"></a>
+              ng-class="{ 'active': i.id === vm.notebook.id }"></a>
           </nav>
 
           <nav class="nav-group">

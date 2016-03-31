@@ -7,11 +7,13 @@ function MainController ($location, $scope, NotebooksService, NotesService, Tags
   self.notebooks = []
   self.notes = []
   self.tags = []
+  self.notebook = undefined
   self.note = undefined
   self.syncing = undefined
 
   // Exposed functions
   self.goto = goto
+  self.selectNotebook = selectNotebook
   self.selectNote = selectNote
   self.createNewNote = createNewNote
   self.deleteSelectedNote = deleteSelectedNote
@@ -33,6 +35,14 @@ function MainController ($location, $scope, NotebooksService, NotesService, Tags
    */
   function goto (path) {
     $location.path(path)
+  }
+
+  /**
+   * Select a notebook to filter displayed notes.
+   * @param  {Object} notebook Notebook object.
+   */
+  function selectNotebook (notebook) {
+    self.notebook = notebook
   }
 
   /**
