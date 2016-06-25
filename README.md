@@ -1,6 +1,7 @@
 # Tantalus
 
-[![Travis Build][travis-image]][travis-url]
+[![Travis Build Status][travis-image]][travis-url]
+[![AppVeyor Build Status][appveyor-image]][appveyor-url]
 
 Alternative cross-platform client for Evernote built in Electron.
 
@@ -46,3 +47,5 @@ MIT.
 
 [travis-url]: https://travis-ci.org/fmoliveira/tantalus
 [travis-image]: https://api.travis-ci.org/fmoliveira/tantalus.svg
+[appveyor-url]: https://ci.appveyor.com/project/fmoliveira/tantalus
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/g9yto48qaeh3r9wx?svg=true
