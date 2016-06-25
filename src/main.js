@@ -26,7 +26,7 @@ app.on('ready', () => {
     'frame': false
   })
 
-  mainWindow.loadURL(path.join('file://', __dirname, '/src/index.html'))
+  mainWindow.loadURL(path.join('file://', __dirname, '/index.html'))
 
   // Dereference it when window is closed
   mainWindow.on('closed', () => {
