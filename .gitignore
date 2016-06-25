@@ -1,7 +1,3 @@
-# Bundles
-src/js/bundle.js
-src/styles/*.css
-
 # Created by https://www.gitignore.io/api/node
 
 ### Node ###
