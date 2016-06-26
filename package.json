@@ -4,18 +4,24 @@
   "description": "Alternative cross-platform client for Evernote built in Electron.",
   "main": "index.js",
   "scripts": {
-    "build": "npm-run-all build:*",
-    "build:css": "stylus src/styles/tantalus.styl --include-css --compress --sourcemap --out src/dist/css/",
-    "build:js": "browserify src/app/app.js --outfile src/dist/js/bundle.js --verbose",
-    "build:fonts": "cp -r src/vendor/fonts/ src/dist/",
-    "develop": "npm-run-all --parallel watch serve open",
-    "start": "electron ./src/main.js",
-    "serve": "http-server ./src/",
-    "open": "opener http://localhost:8080",
+    "start": "npm-run-all build run",
+    "develop": "npm-run-all build --parallel serve open watch",
     "test": "standard src/app/",
-    "watch": "npm-run-all --parallel build:fonts watch:*",
-    "watch:css": "stylus -w src/styles/tantalus.styl --include-css --out src/dist/css/",
-    "watch:js": "watchify src/app/app.js --outfile src/dist/js/bundle.js --verbose"
+
+    "run": "electron ./dist/main.js",
+    "serve": "http-server ./dist/",
+    "open": "opener http://localhost:8080",
+
+    "build": "npm-run-all build:*",
+    "build:css": "stylus src/styles/tantalus.styl --include-css --compress --sourcemap --out dist/css/",
+    "build:fonts": "cp -r src/vendor/fonts/ dist/",
+    "build:js-app": "browserify src/app/app.js --outfile dist/js/bundle.js --verbose",
+    "build:js-main": "cp src/main.js dist/",
+    "build:html": "cp src/index.html dist/",
+
+    "watch": "npm-run-all --parallel watch:*",
+    "watch:css": "stylus -w src/styles/tantalus.styl --include-css --out dist/css/",
+    "watch:js-app": "watchify src/app/app.js --outfile dist/js/bundle.js --verbose"
   },
   "repository": {
     "type": "git",
